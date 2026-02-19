@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #4465A6;
+  --color-primary-dark: #253759;
+  --color-primary-light: #80BDF2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Linea icon fonts */
+@font-face {
+  font-family: "linea-basic-10";
+  src: url("/fonts/linea/linea-basic-10.woff") format("woff"),
+    url("/fonts/linea/linea-basic-10.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "linea-basic-elaboration-10";
+  src: url("/fonts/linea/linea-basic-elaboration-10.woff") format("woff"),
+    url("/fonts/linea/linea-basic-elaboration-10.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.linea-icon {
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.linea-icon.basic {
+  font-family: "linea-basic-10";
+}
+
+.linea-icon.elaboration {
+  font-family: "linea-basic-elaboration-10";
+}
+
+body {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Wave container at bottom of hero */
+.hero-wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 300px;
+  line-height: 0;
+}
+
+.hero-wave svg {
+  width: 100%;
+}
+
+/* Floating/bobbing animation for hero image */
+.hero-float {
+  animation: heroFloat 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
